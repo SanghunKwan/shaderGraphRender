@@ -9,5 +9,35 @@ void CustomLight_File_float(out float3 Direction, out float3 Color)
 		Direction = light.direction;
 		Color = light.color;
     #endif
-
+}
+	// 커스텀 라이트 섀도우
+void CustomLight_Shodow_float(float3 worldPos, out float ShadowAtten)
+{
+#ifdef SHADERGRAPH_PREVIEW
+		ShadowAtten = 1.0f;
+#else
+	//shadow Cood 만들기
+	#if defined(_MAIN_LIGHT_SHADOW_SCREEN) && !defined(_SURFACE_TYPE_TRANSPARENT)
+		half4 clipPos = TransformWorldToHClip(worldPos);
+		half4 shadowCoord = ComputeScreenPos(clipPos);
+	#else
+		half4 shadowCoord = TransformWorldToShadowCoord(worldPos);
+	#endif
+    Light light = GetMainLight();
+	//메인 라이트가 없거나 받는 섀도우 오프 옵션이 되어 있을 경우 그림자를 없앤다.
+	#if !defined(_MAIN_LIGHT_SHADOWS) || defined(_RECEIVE_SHADOWS_OFF)
+		ShadowAtten = 1.0f;
+	#endif
+	
+	//ShadowAtten 데이터 받아서 만들기
+	#if SHADOWS_SCREEN
+		ShadowAtten = SampleScreenSpaceShadowmap(shadowCoord);
+	#else
+		ShadowSamplingData shadowSamplingData = GetMainLightShadowSamplingData();
+		half shadowStrenth = GetMainLightShadowStrength();
+		ShadowAtten = SampleShadowmap(shadowCoord, TEXTURE2D_ARGS(_MainLightShadowmapTexture, sampler_MainLightShadowmapTexture), shadowSamplingData, shadowStrenth, false);
+	
+	#endif
+	
+#endif
 }
