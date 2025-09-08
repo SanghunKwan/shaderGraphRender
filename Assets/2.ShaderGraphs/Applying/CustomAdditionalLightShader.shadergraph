@@ -163,20 +163,6 @@
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "57bee7135a604bbb8128fafa0d7fdb26"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "0605a655075e427f813597eac9a12585"
-                },
-                "m_SlotId": 3
-            },
-            "m_InputSlot": {
-                "m_Node": {
                     "m_Id": "a5a33c5d2764467f9d5aec4813175b07"
                 },
                 "m_SlotId": 1
@@ -416,6 +402,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "a5a33c5d2764467f9d5aec4813175b07"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "919b47fcc37f46d78f1cc4cfd0dc986c"
+                },
+                "m_SlotId": 1
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "57bee7135a604bbb8128fafa0d7fdb26"
                 },
                 "m_SlotId": 0
             }
@@ -801,8 +801,8 @@
     "m_ObjectId": "0f73911fd20b4f1984ed96034c68d011",
     "m_Title": "Shadow",
     "m_Position": {
-        "x": -704.0000610351563,
-        "y": -458.0000305175781
+        "x": -703.999755859375,
+        "y": -458.0
     }
 }
 
@@ -2131,8 +2131,8 @@
     "m_ObjectId": "65ecfbae76794300b8c8ecc11bf67e13",
     "m_Title": "Fresnel",
     "m_Position": {
-        "x": -1967.0001220703125,
-        "y": 175.0
+        "x": -1966.999755859375,
+        "y": 174.99969482421876
     }
 }
 
@@ -2280,8 +2280,8 @@
     "m_ObjectId": "6fea8e86e3b04293a4ae67e5f4670d11",
     "m_Title": "Ambient",
     "m_Position": {
-        "x": -1901.0001220703125,
-        "y": -798.0000610351563
+        "x": -1900.999755859375,
+        "y": -798.0
     }
 }
 
@@ -3051,8 +3051,8 @@
     "m_ObjectId": "a27eb3b367fa4287b2187e1e61ce71cf",
     "m_Title": "Specular",
     "m_Position": {
-        "x": -1187.0,
-        "y": -157.0
+        "x": -1186.999755859375,
+        "y": -156.99984741210938
     }
 }
 
@@ -3110,8 +3110,8 @@
     "m_ObjectId": "a58b71f4606e49df8fe6852aa0c46a89",
     "m_Title": "Diffuse Reflection",
     "m_Position": {
-        "x": -1765.0001220703125,
-        "y": -525.0000610351563
+        "x": -1764.999755859375,
+        "y": -524.9998168945313
     }
 }
 
