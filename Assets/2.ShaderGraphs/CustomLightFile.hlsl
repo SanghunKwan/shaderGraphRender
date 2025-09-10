@@ -10,6 +10,14 @@ void CustomLight_File_float(out float3 Direction, out float3 Color)
 		Color = light.color;
     #endif
 }
+void CustomLight_Additional_File_float(out float Direction)
+{
+#ifdef SHADERGRAPH_PREVIEW
+		Direction = 1;
+#else
+    Direction = GetAdditionalLightsCount();
+#endif
+}
 	// 커스텀 라이트 섀도우
 void CustomLight_Shodow_float(float3 worldPos, out float ShadowAtten)
 {
